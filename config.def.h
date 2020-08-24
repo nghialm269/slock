@@ -14,3 +14,6 @@ static const int failonclear = 1;
 
 /* time in seconds before the monitor shuts down */
 static const int monitortime = 5;
+
+/* ignore empty password when pressing return */
+static const int ignoreempty = 0;

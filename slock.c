@@ -178,6 +178,9 @@ readpw(Display *dpy, struct xrandr *rr, struct lock **locks, int nscreens,
 				XSendEvent(dpy, DefaultRootWindow(dpy), True, KeyPressMask, &ev);
 				break;
 			case XK_Return:
+				if (ignoreempty && !len) {
+					continue;
+				}
 				passwd[len] = '\0';
 				errno = 0;
 				if (!(inputhash = crypt(passwd, hash)))
